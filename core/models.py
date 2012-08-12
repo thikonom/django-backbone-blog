@@ -15,7 +15,7 @@ class Entry(db.Model):
 
     def to_dict(self):
         """
-        Returns a custom JSON representation of the model instance.
+        Returns a custom representation of the model instance.
         """
         gap = datetime.datetime.now().date() - self.pub_date.date()
         pub_date_format = str(gap.days) + ' ' + \
