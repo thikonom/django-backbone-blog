@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Potato Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="{{STATIC_URL}}js/modernizr-1.6.min.js"></script>
+    <script src="{{STATIC_URL}}js/underscore.js"></script>
+    <script src="{{STATIC_URL}}js/backbone.js"></script>
+    <script src="{{STATIC_URL}}js/app.js"></script>
+    <script src="{{STATIC_URL}}js/csrf_protection.js"></script>
+	
+	<script type="text/template" id="header-template">
+	 <li class="active"><a class="new-entry"><i class="icon-edit icon-white"></i>Add blog post</a></li>
+	</script>
+	
+	<script type="text/template" id="library-template">
+      <div class="entries"></div>
+	</script>
+
+    <script type="text/template" id="entry-template-small">
+      <h2><%= title %></h2>
+      <%= body_html %>
+      <p><a class="btn" href="#entries/<%= id %>">Read full post &raquo;</a></p>
+    </script>
+
+    <script type="text/template" id="entry-template-full">
+    <div class="btn-group">
+      <a class="btn btn-primary"><i class="icon-user icon-white"></i> Actions</a>
+      <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li class='edit-entry'><a href="#entries/<%= id %>/edit"><i class="icon-pencil"></i> Edit</a></li>
+        <li class="divider"></li>
+		<li class='delete-entry'><a><i class="icon-trash"></i> Delete</a></li>
+      </ul>
+    </div>
+	  <h2><%= title %></h2>
+	  <h6><%= pub_format %><em><%= author %></em></h6>
+      <br/>
+      <%= body_html %>
+    </script>
+
+	<script type="text/template" id="new-entry-template">
+		  <fieldset>
+		    <div class="control-group">
+		      <label class="control-label" for="input01">Title</label>
+		      <div class="controls">
+		        <input type="text" class="input-xlarge" id="input01">
+		      </div>
+		    </div>
+		    <div class="control-group">
+		      <label class="control-label" for="input02">Body</label>
+		      <div class="controls">
+				<div id="epiceditor"></div>
+				<p class="help-block">You can preview your markdown or write in fullscreen thanks to <a href="http://www.epiceditor.com" target="_blank">EpicEditor</a> </p>
+		      </div>
+		    </div>
+			<div class="form-actions">
+			    <button class="btn btn-primary save">Post</button>
+			    <button class="btn cancel">Cancel</button>
+		    </div>
+		  </fieldset>
+	</script>
+
+    <!-- Le styles -->
+    <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="{{STATIC_URL}}css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="{{STATIC_URL}}ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{STATIC_URL}}ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{STATIC_URL}}ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{STATIC_URL}}ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="{{STATIC_URL}}ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Simple Blogging Tool</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <div class="container">
+		<div class="initial-message" style="display:none">
+			<h1>Hi, Potato!</h1>
+	        <p>This is my implementation using
+			Django, Backbone.js and Twitter Bootstrap.<br/>
+			</p>
+	        <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+		</div>
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit"></div>
+	  <div class='row'></div>
+      <hr>
+
+      <footer>
+        <p>&copy; Theodoros Ikonomou 2012</p>
+        {% csrf_token %}
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+     <script src="{{STATIC_URL}}js/bootstrap-alert.js"></script>
+     <script src="{{STATIC_URL}}js/bootstrap-dropdown.js"></script>
+     <script src="{{STATIC_URL}}js/bootstrap-button.js"></script>
+ 
+  </body>
+</html>
