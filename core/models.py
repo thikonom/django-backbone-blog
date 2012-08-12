@@ -1,6 +1,5 @@
 import datetime
 import markdown
-from django.utils import simplejson as json
 
 from google.appengine.api import users
 from google.appengine.ext import db
