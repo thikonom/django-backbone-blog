@@ -100,7 +100,6 @@
                  'title': this.$('#input01').val(),
                  'body_markdown': epiceditor.exportFile()
              });
-             console.log(attrs.body_markdown);
              if(this.model.isNew()){
                  var self = this;
                  App.library.create(attrs, {

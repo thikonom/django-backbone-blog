@@ -18,7 +18,7 @@ class Entry(db.Model):
         """
         gap = datetime.datetime.now().date() - self.pub_date.date()
         pub_date_format = str(gap.days) + ' ' + \
-                           self.pub_date.strftime('%B %m %Y')
+                           self.pub_date.strftime('%B %d %Y')
         
         d = {
             'title': self.title,
