@@ -5,7 +5,7 @@ from core import views
 urlpatterns = patterns(
     '',
     url(r'^$', 'django.views.generic.simple.direct_to_template', {'template':'index.html'}),
-    url(r'entries/(?P<entry_id>\d*)$', views.crud_dispatcher)
+    url(r'entries/(?P<entry_id>\d*)$', views.ApiView.as_view())
 )
 
 if settings.DEBUG:
