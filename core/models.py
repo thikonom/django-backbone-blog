@@ -21,6 +21,7 @@ class Entry(db.Model):
                            self.pub_date.strftime('%B %d %Y')
         
         d = {
+            'id': self.key().id(),
             'title': self.title,
             'author': 'guest',
             'body_markdown': self.body_markdown,
