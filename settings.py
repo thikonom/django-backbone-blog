@@ -6,7 +6,7 @@ APPENGINE_PRODUCTION = os.getenv('APPENGINE_PRODUCTION')
 HTTP_HOST = os.environ.get('HTTP_HOST')
 
 PROJDIR = os.path.abspath(os.path.dirname(__file__))
-APPDIR = os.path.join(PROJDIR, 'core')
+APPDIR = os.path.join(PROJDIR, 'blog')
 
 DEBUG = not APPENGINE_PRODUCTION
 TEMPLATE_DEBUG = DEBUG
@@ -162,7 +162,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
+    'blog',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

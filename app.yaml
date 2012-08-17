@@ -14,7 +14,7 @@ inbound_services:
 handlers:
 
 - url: /static
-  static_dir: core/static
+  static_dir: blog/static
   expiration: '1m'
 
 - url: /favicon.ico
