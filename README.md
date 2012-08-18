@@ -1,6 +1,7 @@
 Use it
 --------------
 + git clone ...
++ cd django-backbone-blog
 + sed -i '' 's/myappid/your_app_id/' app.yaml
 + dev_appserver.py .
 
