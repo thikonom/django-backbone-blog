@@ -1,7 +1,7 @@
 How to use it
 --------------
 + git clone ...
-+ sed -i '' 's/myappid/your_app_id' app.yaml
++ sed -i '' 's/myappid/your_app_id/' app.yaml
 + dev_appserver.py .
 
 Working Demo
