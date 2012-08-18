@@ -1,4 +1,4 @@
-How to use it
+Use it
 --------------
 + git clone ...
 + sed -i '' 's/myappid/your_app_id/' app.yaml
