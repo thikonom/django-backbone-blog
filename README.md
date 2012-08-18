@@ -6,4 +6,4 @@ How to use it
 
 Working Demo
 ============
-There is a working demo at: <a href="django-backbone-blog.appspot.com">django-backbone-blog.appspot.com</a>
+There is a working demo at: <a href="http://www.django-backbone-blog.appspot.com">django-backbone-blog.appspot.com</a>
